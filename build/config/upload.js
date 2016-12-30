@@ -2,7 +2,7 @@
  * 发布上传配置
  */
 
- let project = "qqd-weixin";
+ let project = "vue-ui";
 
 export default {
     "project":project,

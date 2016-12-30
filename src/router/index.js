@@ -1,14 +1,16 @@
-import index from '../apply/router.js'; //提交材料,绑定手机页面
- 
+import index from '../apply/router.js'; 
+
+
+
 var routes = [].concat([],
-  apply
+  index
 );
 
 
 routes.push({
     name:'index',
     path: '*',
-    redirect: { name: 'index' },
+    redirect: { name: 'bind' },
 });
 
 // 创建和挂载根实例
@@ -25,13 +27,12 @@ router.beforeEach((to, from, next) => {
   if(to.name == 'result'){
       title = to.params.type == "1" ?'绑定手机':'推荐客户';
   }
-	qqd.changeDocumentTitle(title);
+	global.changeDocumentTitle(title);
   next();
 });
 
 // 全局钩子,没有next方法
 // router.afterEach((to,from) =>{
-//     console.log('22222',from);
 // });
 
 export {routes}

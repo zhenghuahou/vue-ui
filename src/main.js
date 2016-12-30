@@ -5,6 +5,10 @@
 import router from './router'
 import App from './app'
 
+
+
+
+
 // vue 项目基本配置
 Vue.use(VueRouter);
 Vue.use(VueResource);
@@ -25,5 +29,5 @@ Vue.http.interceptors.push((request,next)=>{
 new Vue({
   router,
   render: h => h(App)
-}).$mount('#qqd')
+}).$mount('#vue')
 

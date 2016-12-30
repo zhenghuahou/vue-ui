@@ -51,8 +51,7 @@ export default {
        
         // https://github.com/RoccoC/webpack-build-notifier
         new WebpackNotifierPlugin({
-            title: `H5贷总管`,
-            logo: 'global/img/logo.png',
+            title: `vue-ui`,
             successSound: 'Submarine',
             failureSound: 'Glass',
             suppressSuccess: true

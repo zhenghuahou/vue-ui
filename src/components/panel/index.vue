@@ -10,6 +10,7 @@
 </template>
 
 <script>
+
     export default {
         props: {
             title: {// 是否显示Panel标题
@@ -28,8 +29,8 @@
 </script>
 
 <style lang="sass">
-    @import "../../global/qqd/variable.scss";
-        
+   @import "~modulepath/variable.scss";
+
     .panel{
         margin-top: 10px;
     }

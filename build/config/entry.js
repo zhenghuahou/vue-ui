@@ -11,9 +11,7 @@ export default {
         'understore',
         'global',
         'jps',
-        'iwjwLog',
         'vueComponents',
-        'qqd',
         './src/global/module/base.scss'
     ]
 };

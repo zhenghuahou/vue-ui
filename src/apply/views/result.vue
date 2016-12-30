@@ -7,7 +7,6 @@
         <p class="content">{{detail.content}}</p>
         <Btn text='查看我的业绩' @onSubmit='onSubmit' v-if='loginFrom == "myperformance"'></Btn>
         <Btn :text='detail.btnText' @onSubmit='onSubmit' v-else></Btn>
-        <p class='nextTime' @click="WXclose" >我知道了，下次再推荐>></p>
     </div>
 </template>
 
@@ -68,19 +67,12 @@ export default {
     },
     methods:{
        onSubmit(){
-            let {type} = this;
             // 绑定手机成功页,回到微信页面
             if(this.loginFrom){
                 Submit = true;
                  this.$router.push({'name':link[this.loginFrom]});
-            }else{
-                wx.closeWindow();
             }
             
-       },
-       WXclose(){
-            alert(1)
-            wx.closeWindow();
        }
     }
    
@@ -88,7 +80,8 @@ export default {
 </script>
 
 <style lang="sass">
-    @import '../../global/qqd/variable.scss';
+    @import '~modulepath/variable.scss';
+
     
     .qqd-result{
         padding:45px 30px;
@@ -112,11 +105,6 @@ export default {
         }
         .content{
             color: $light-gray;
-        }
-        .nextTime{
-            text-align: center;
-            font-size: 12px;
-            margin-top: -12px;
         }
        
     }

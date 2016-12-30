@@ -50,3 +50,9 @@ var jps = {
 }
 
 $.jps = jps
+
+
+export default () =>{
+   
+    return [];
+}

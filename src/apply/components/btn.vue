@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="sass">
-    @import '../../global/qqd/variable.scss';
+    @import '~modulepath/variable.scss';
     .submit-btn{
         display: block;
         margin:24px 0;

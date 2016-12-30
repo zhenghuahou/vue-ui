@@ -1,9 +1,6 @@
 <template>
     <div class="qqd-apply">
         <panel cname='panel-form'>
-            <grid label="所在城市">
-                <select-input :selected='cityId' :selectedList='cityList' @selectedChange='selectedChange'></select-input>
-            </grid>
             <grid label="公司">
                <input class='input' v-model='company' name='company' @input='onInput' type='text' placeholder="请输入公司名称"  maxlength="20"/>
             </grid>
@@ -18,7 +15,6 @@
         </panel>
 
         <Btn text='登录并绑定' @onSubmit='onSubmit' :cname="submitEnable?'':'disable'"></Btn>
-        <div class="agreement">您同意鹊桥贷微信绑定手机号，即代表您已同意<router-link class='link' :to='{name:"protocol"}'>《鹊桥贷用户协议》</router-link>并自动注册鹊桥贷账号。</div>
 
     </div>
 </template>
@@ -27,10 +23,11 @@
 import Panel from '../../components/panel';
 import IPhone from '../../components/input'
 import Grid from '../../components/grid'
-import selectInput from '../../components/select'
 
 import Btn from'../components/btn.vue';
 import Api from '../api';
+// import jps from 'modulepath/jps.js'; 
+ 
 
 //提示信息
 let messages ={
@@ -59,17 +56,14 @@ export default {
         Panel,
         Grid,
         Btn,
-        IPhone,
-        selectInput
+        IPhone
     },
     data () {
-        let {locationsJson,provinceid} = pageConfig;
+        let {locationsJson} = pageConfig;
 
         return {
             loading:false,
             submitEnable:false,  //默认不能提交
-            cityList:locationsJson,
-            cityId:provinceid || '2',
             company:'',
             username:'',
             tel:'',
@@ -119,13 +113,11 @@ export default {
         getParams(){
            /*
              * @param userName 用户姓名
-             * @param cityId 城市id
              * @param mobile 用户手机号
              * @param loanAmount 贷款金额（单位：元）
             */
             let params = {};
 
-            params.cityId = this.cityId;
             params.companyName = this.company;
             params.userName = this.username;
             params.mobile = this.tel;
@@ -178,7 +170,7 @@ export default {
 </script>
 
 <style lang="sass">
-    @import '../../global/qqd/variable.scss';
+    @import '~modulepath/variable.scss';
 
     .qqd-apply{
         .city-list{

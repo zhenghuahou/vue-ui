@@ -11,7 +11,7 @@ import webpackConfig from '../webpack.config.prod'
 webpackConfig.plugins.splice(webpackConfig.plugins.findIndex((p) => p instanceof webpack.optimize.UglifyJsPlugin), 1)
 
 webpackConfig.watch = true;
-webpackConfig.output.publicPath = `http://${ip.address()}/qqd-weixin/`;
+webpackConfig.output.publicPath = `http://${ip.address()}/vue-ui/`;
 
 webpack(webpackConfig, function(err, stats) {
     if (err) {

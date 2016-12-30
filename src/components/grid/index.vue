@@ -21,7 +21,7 @@
 
 <style lang="sass">
 
-     @import '../../global/qqd/variable.scss';
+     @import '~modulepath/variable.scss';
     
     .grid-cell{
         overflow: hidden;

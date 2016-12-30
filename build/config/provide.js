@@ -8,6 +8,5 @@ export default {
         FastClick: 'fastclick',
         Vue: 'vue',
         VueRouter: 'vue-router',
-        VueResource: 'vue-resource',
-        weixin: 'weixin',
+        VueResource: 'vue-resource'
     }

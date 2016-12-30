@@ -122,7 +122,7 @@ export default{
 </script>
 
 <style lang="sass">
-	@import "../../global/qqd/variable.scss";
+	@import "~modulepath/variable.scss";
 
 	.input-iphone{
 		margin-left: 32px;

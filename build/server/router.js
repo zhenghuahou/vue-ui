@@ -22,19 +22,10 @@ export default function(app){
     //arguments 3个参数,第一个req,第二个参数 res 第三个参数next方法
     //console.log('arguments------>',arguments,arguments[0]===app,arguments.length);
     //匹配路径:http://10.7.248.201:9091/index/bind/
-    app.get('/index/bind',(req, res)=>{
-        res.render('./layouts/main',defaultConfig);
-    });
-
-    // app.get('/protocol',(req, res)=>{
+    // app.get('/index/bind',(req, res)=>{
     //     res.render('./layouts/main',defaultConfig);
     // });
 
-    //匹配路径:http://10.7.248.201:9091/recommend/
-    // app.get('/index/recommend',(req, res)=>{
-    //     //用index.hbs模板渲染
-    //     res.render('./layouts/main',defaultConfig);
-    // });
     
     //走通用模板
     //匹配路径 例如 a a/b a/b/c
@@ -42,6 +33,13 @@ export default function(app){
     app.use(/^[\w|/]+$/,function(req, res,next){
         // console.log('req.params:',req.params);
         res.render('./layouts/main',defaultConfig);
+    });
+
+    //走通用模板
+    //匹配路径 例如 a a/b a/b/c
+    //’/‘在[]直接可以不用转码
+    app.use(/\.action+$/,function(req, res,next){
+        res.send('Hello World');
     });
 
     //因为开启了热加载,所有的js文件都是通过'http://10.7.248.201:9091/app.js'这种路径形式访问的
